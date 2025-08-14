@@ -1,0 +1,13 @@
+- Assuming we are using LastPlanID to retrieve UpgradeA and UpgradeB IDs
+- Assuming we are only targeting Consent Email = true
+- Assuming all fields in the Reactivated customer DE is populated
+- Assuming if LastPlanID doesnt exist in the plan matrix - then exclude
+- Assuming any record with N/A as upgrade plan - we will exclude
+
+
+
+
+
+
+
+
