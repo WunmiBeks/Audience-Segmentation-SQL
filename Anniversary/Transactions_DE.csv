@@ -1,0 +1,17 @@
+MemberID,TransactionID,TransactionDate,Amount,LastStoreVisited
+M001,T001,2023-12-10,200,Gourmet Town
+M001,T002,2024-01-15,150,Foodie Haven
+M001,T003,2024-06-20,300,Bistro Bliss
+M002,T004,2023-12-20,100,Culinary Cove
+M002,T005,2024-02-10,300,Foodie Haven
+M004,T006,2024-03-15,800,Bistro Bliss
+M005,T007,2023-11-15,50,Gourmet Town
+M005,T008,2024-05-20,500,Culinary Cove
+M006,T009,2024-06-05,250,Foodie Haven
+M006,T010,2024-07-15,50,Bistro Bliss
+M007,T011,2024-01-20,400,Foodie Haven
+M007,T012,2024-05-10,200,Bistro Bliss
+M008,T013,2024-02-15,700,Culinary Cove
+M009,T014,2024-03-05,300,Gourmet Town
+M009,T015,2024-04-20,100,Foodie Haven
+M010,T016,2024-05-25,600,Culinary Cove
