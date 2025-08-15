@@ -8,6 +8,6 @@ The campaign’s target audience criteria are as follows:
 •	Exclude subscribers who have already attended any other “gala” event in the last 12 months (recorded in an Event Attendance DE).
 •	Include only subscribers who are classified as Platinum and Gold-tier customers (stored in the Customer Tier DE)
 •	The email developer has created a separate email for the Platinum and Gold Tiered members however requested 
-  the following fields for the final DE to use for dynamic content:
+   the following fields for the final DE to use for dynamic content:
   - The NearestLocation (nearest event location) based on the subscriber’s city.
   - EventName (event name of the promoted gala dinner event).
