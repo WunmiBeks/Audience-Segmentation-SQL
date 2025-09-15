@@ -1,4 +1,4 @@
-# WELCOME SERIES
+# WELCOME SERIES PROJECT
 
 ## Project Overview
 
