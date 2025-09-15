@@ -1,5 +1,8 @@
 - Identify Loyalty Members by joining against Customer_Tier DE(only platinum and gold tier)
 - Gala event location is dynamic based off subscriber city(assuming city is not null but if null not included in the send)
 - Assuming gala events are identified by having the word gala in the name, it will be used as an exclusion criteria.
-- Assuming Nearest Event - refers to subscribers current city in master De 
--
+- Assuming Nearest Event - refers to subscribers current city in the Master_subscriber DE
+
+
+
+

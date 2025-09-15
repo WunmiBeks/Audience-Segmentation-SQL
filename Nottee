@@ -1,0 +1,32 @@
+SELECT          Mem.MemberID, 
+                Mem.FirstName, 
+                Mem.EmailAddress, 
+                Mem.MembershipTier, 
+                Mem.LoyaltyPoint, 
+                Mem.Consent_Email, 
+                Mem.JoinDate, 
+                CASE 
+                    WHEN App.MemberID IS NOT NULL THEN 1
+                    ELSE 0
+                END AS HasDownloaded, 
+                GETDATE() AS JourneyEntryDate
+FROM            [Member] Mem
+LEFT JOIN       [Customer_App] App
+ON              Mem.MemberID = App.MemberID
+AND             App.DownloadDate IS NOT NULL
+
+/* JOINED LOYALTY PROGRAM IN THE LAST 7 DAYS */
+WHERE           Mem.JoinDate >= DATEADD(D, -7, GETDATE() AT TIME ZONE 'Central Standard Time' AT TIME ZONE 'Eastern Standard Time')
+
+/* OPTED IN TO EMAIL COMMS */
+AND             Consent_Email = 1
+
+/* MEMBERS WHO HAVE NOT DOWNLOADED
+AND             NOT EXISTS ( SELECT      1
+                             FROM       [Customer_app] C
+                             WHERE      App.MemberID = Mem.[MemberID]
+                              )  */
+/* EXCLUDE MEMBERS ALREADY IN THE JOURNEY */                            
+AND             NOT EXISTS ( SELECT      1
+                             FROM        [WelcomeSeries-JourneyEntry] Journey
+                             WHERE        Mem.MemberID = Journey.MemberID)
