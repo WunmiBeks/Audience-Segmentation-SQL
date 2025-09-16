@@ -22,11 +22,6 @@ WHERE           Mem.JoinDate >= DATEADD(D, -7, GETDATE())
 /* OPTED IN TO EMAIL COMMS */
 AND             Mem.Consent_Email = 1
 
-/* MEMBERS WHO HAVE NOT DOWNLOADED
-AND             NOT EXISTS ( SELECT      1
-                             FROM       [Customer_app] C
-                             WHERE      App.MemberID = Mem.[MemberID]
-                              )  */
 /* EXCLUDE MEMBERS ALREADY IN THE JOURNEY */                            
 AND             NOT EXISTS ( SELECT      1
                              FROM        [WelcomeSeries-JourneyEntry] Journey
