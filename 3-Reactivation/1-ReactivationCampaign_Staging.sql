@@ -13,6 +13,7 @@ SELECT            mast.SubscriberKey,
                   /* UPGRADE PLAN B DETAILS */
                   matrix.UpgradePlanB, 
                   matrix.PromoCodeB_50 AS UpgradePlanB_50PromoCode,
+                  0 AS HasReactivated
 FROM              [master_customer] mast
 INNER JOIN        [plans_matrix] matrix
 ON                mast.LastPlanID = matrix.PlanID
@@ -33,13 +34,14 @@ AND                NOT EXISTS ( SELECT     1
  
  /* REACTIVATION EXCLUSION CRITERIA */                               
 
-AND                NOT EXISTS ( SELECT     1
+AND                NOT EXISTS ( SELECT      1
                                 FROM        [Reactivated_Customers] Reactivated
                                 WHERE       mast.SubscriberKey = Reactivated.SubscriberKey
                                 AND         mast.PhoneID = Reactivated.PhoneID
                                 AND         Reactivated.ReactivatedDate >= DATEADD(D, -90, GETDATE()))    
                                 
  /* EXCLUDING CONTROL RECORDS */
- AND               NOT EXISTS (SELECT     1
+ AND               NOT EXISTS (SELECT      1
                                FROM       [ReactivationAudience_ControlLog] control
-                               WHERE       mast.SubscriberKey = control.SubscriberKey)
+                               WHERE      mast.SubscriberKey = control.SubscriberKey)
+

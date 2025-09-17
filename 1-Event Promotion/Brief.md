@@ -1,6 +1,6 @@
 # EVENT PROMOTION AUTOMATION
 
-## Overview
+## Project Overview
 
 Velloria Events is hosting an exclusive gala dinner and wants to set up a one-time promotional campaign in SFMC. This campaign will invite eligible subscribers from their database to attend the event. The task is to design an automation and journey to target the right audience and ensure the promotional email includes data for dynamic content based on subscriber preferences. 
 
